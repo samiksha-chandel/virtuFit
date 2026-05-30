@@ -1,0 +1,7 @@
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; import { AnimatePresence } from 'framer-motion'; import { AuthProvider } from './contexts/AuthContext'; import { AppProvider } from './contexts/AppContext'; import Layout from './layouts/Layout'; import Landing from './pages/Landing'; import Login from './pages/Login'; import ProductSelection from './pages/ProductSelection'; import PhotoUpload from './pages/PhotoUpload'; import TryOn from './pages/TryOn'; import Admin from './pages/Admin'; import LoadingScreen from './components/LoadingScreen';
+
+function AnimatedRoutes() { const location = useLocation();
+
+return ( <AnimatePresence mode="wait"> <Routes location={location} key={location.pathname}> <Route path="/" element={<Landing />} /> <Route path="/login" element={<Login />} /> <Route path="/products" element={<ProductSelection />} /> <Route path="/upload" element={<PhotoUpload />} /> <Route path="/tryon" element={<TryOn />} /> <Route path="/admin" element={<Admin />} /> </Routes> </AnimatePresence> ); }
+
+export default function App() { return ( <Router> <AuthProvider> <AppProvider> <LoadingScreen> <Layout> <AnimatedRoutes /> </Layout> </LoadingScreen> </AppProvider> </AuthProvider> </Router> ); }
