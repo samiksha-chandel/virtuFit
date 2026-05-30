@@ -109,7 +109,3 @@ src/
 * Drei
 * Recharts
 * Lenis
-
-## License
-
-MIT License
