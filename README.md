@@ -96,3 +96,5 @@ License
 MIT License - © 2027 VirtuFit
 
 Built with ❤️ using React, Three.js, and Framer Motion
+=======
+# virtuFit
